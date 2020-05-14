@@ -1,4 +1,9 @@
-#!/bin bash -x
+#!/bin/bash -x
 
-echo "Welcome to flip coin Combination Problem"
-
+result=$((RANDOM % 2))
+if [ $result -eq 1 ]
+then
+	echo "Heads"
+else
+	echo "Tails"
+fi
