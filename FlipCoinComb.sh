@@ -2,33 +2,53 @@
 
 declare -A DoubleDict
 declare -A PercentDouble
-hh=0
-ht=0
-th=0
-tt=0
+hhh=0
+hht=0
+thh=0
+hth=0
+ttt=0
+tth=0
+htt=0
+tht=0
 
 for ((count=0; count<20; count++))
 do
-	result=$((RANDOM % 4))
+	result=$((RANDOM % 8))
 	if [ $result -eq 0 ]
 	then
-		$((hh++))
+		$((hhh++))
 	elif [ $result -eq 1 ]
 	then
-		$((ht++))
+		$((hht++))
 	elif [ $result -eq 2 ]
 	then
-		$((th++))
-	elif [ $result -eq 3 ]
+		$((thh++))
+        elif [ $result -eq 3 ]
+        then
+                $((hth++))
+        elif [ $result -eq 4 ]
+        then
+                $((ttt++))
+        elif [ $result -eq 5 ]
+        then
+                $((tth++))
+        elif [ $result -eq 6 ]
+        then
+                $((htt++))
+	elif [ $result -eq 7 ]
 	then
-		$((tt++))
+		$((tht++))
 	fi
 done
 
-DoubleDict[HH]=$hh
-DoubleDict[TT]=$tt
-DoubleDict[HT]=$ht
-DoubleDict[TH]=$th
+DoubleDict[HHH]=$hhh
+DoubleDict[TTT]=$ttt
+DoubleDict[HHT]=$hht
+DoubleDict[TTH]=$tth
+DoubleDict[THH]=$thh
+DoubleDict[HTT]=$htt
+DoubleDict[HTH]=$hth
+DoubleDict[THT]=$tht
 
 for i in ${!DoubleDict[@]}
 do
